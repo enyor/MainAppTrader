@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorBackgroundFloating"
+    android:orientation="vertical"
+    android:verticalScrollbarPosition="right">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context="com.banticsoftware.mainapp.mainapptrader.MapsActivity" />
+
+    <FrameLayout
+        android:id="@+id/fl_suscripcion"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:alpha="0.8"
+        android:background="@drawable/rouded_blanco_borde_oscuro"
+        app:layout_constraintBottom_toTopOf="@+id/fl_nota"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/notas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/roboto"
+            android:text='"Suscríbete aquí"'
+            android:textAlignment="center"
+            android:textColor="@color/Magent3"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+    </FrameLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="bottom|left|end"
+
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@android:drawable/ic_dialog_email"
+        android:tooltipText="Reservas"
+        android:visibility="gone"
+        app:backgroundTint="@color/Magent"
+        app:layout_constraintEnd_toStartOf="@+id/fabportafolio"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabtool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:tooltipText="Ajustes Perfil"
+        app:backgroundTint="@color/Magent3"
+        app:fabSize="mini"
+        app:layout_constraintStart_toEndOf="@+id/fabpreview"
+        app:layout_constraintTop_toTopOf="@+id/fabpreview"
+        app:srcCompat="@drawable/ic_perfil_s" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabnotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:tooltipText="Servicios"
+        app:backgroundTint="@color/Magent3"
+        app:fabSize="mini"
+        app:layout_constraintStart_toEndOf="@+id/fabpreview"
+        app:layout_constraintTop_toBottomOf="@+id/fabtool"
+        app:srcCompat="@drawable/ic_notification_s" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabportafolio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:tooltipText="Portafolio"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/portafolio" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabcompartir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:tooltipText="Portafolio"
+        app:backgroundTint="@color/Magent3"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="@+id/fabpreview"
+        app:layout_constraintStart_toEndOf="@+id/fabvisibility"
+        app:layout_constraintTop_toBottomOf="@+id/fabpreview"
+        app:srcCompat="@drawable/ic_share_s" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabshareTrader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toStartOf="@+id/fabshareClient"
+        app:layout_constraintTop_toBottomOf="@+id/fabcompartir"
+        app:srcCompat="@android:drawable/ic_menu_share" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabshareClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:layout_constraintStart_toEndOf="@+id/fabcompartir"
+        app:layout_constraintTop_toTopOf="@+id/fabcompartir"
+        app:srcCompat="@android:drawable/ic_menu_share" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabvisibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        app:backgroundTint="@color/greyish"
+        app:fabSize="mini"
+        app:layout_constraintStart_toStartOf="@+id/fabpreview"
+        app:layout_constraintTop_toBottomOf="@+id/fabpreview"
+        app:srcCompat="@android:drawable/ic_lock_power_off" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabpreview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        app:backgroundTint="@color/Magent3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_preview_s" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabmsj"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="8dp"
+        android:clickable="true"
+        app:backgroundTint="@color/rojo"
+        app:layout_constraintBottom_toBottomOf="@+id/fabnotification"
+        app:layout_constraintEnd_toEndOf="@+id/fabnotification"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="@+id/fabnotification"
+        app:layout_constraintTop_toTopOf="@+id/fabnotification"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <FrameLayout
+        android:id="@+id/fl_nota"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:layout_marginStart="8dp"
+        android:alpha="0.6"
+        android:background="@drawable/rouded_blanco_borde_oscuro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/nota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/roboto"
+            android:text='"Para registrar/cambiar tu posición manten presionado un lugar en el mapa"'
+            android:textAlignment="center"
+            android:textColor="@color/Magent"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+    </FrameLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabalert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="64dp"
+        android:clickable="true"
+        android:visibility="gone"
+        app:backgroundTint="@color/rojo"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_dialog_alert" />
+
+</android.support.constraint.ConstraintLayout>

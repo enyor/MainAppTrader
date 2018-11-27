@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "co.kaizenpro.mainapp.mainapptrader"
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 25
+        versionName "1.2.3"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.google.firebase:firebase-database:12.0.1'
+    implementation 'com.google.android.gms:play-services-maps:12.0.1'
+    implementation 'com.google.firebase:firebase-messaging:12.0.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:0.5'
+    compile 'com.google.firebase:firebase-core:12.0.1'
+
+    compile ('com.github.bumptech.glide:okhttp3-integration:1.4.0'){
+        exclude group: 'glide-parent'
+    }
+
+    //compile 'com.squareup.okhttp3:okhttp:3.4.2'
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'org.jetbrains.anko:anko-commons:0.10.1'
+
+    compile 'com.beust:klaxon:0.30'
+    compile 'com.github.kittinunf.fuel:fuel-android:1.12.1'
+    compile 'com.github.kittinunf.fuel:fuel-gson:1.12.1'
+    //Diseño
+    compile 'com.android.support:recyclerview-v7:26+' //Lista
+    compile 'com.android.support:cardview-v7:26.1.0' //Tarjetas
+    //Agregados
+    compile 'de.hdodenhof:circleimageview:1.3.0' //Imagen Circular
+    compile 'com.github.bumptech.glide:glide:3.7.0' //Recortar Imagen Descargar Imagen
+    compile 'com.mcxiaoke.volley:library:1.0.0' //upload img
+
+    //androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.andrognito.pinlockview:pinlockview:2.1.0'
+
+    compile 'me.grantland:autofittextview:0.2.+'
+    implementation 'com.github.chrisbanes:PhotoView:2.1.3'
+}
+apply plugin: 'com.google.gms.google-services'
+
+
